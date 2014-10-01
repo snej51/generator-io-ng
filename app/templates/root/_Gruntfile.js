@@ -508,6 +508,11 @@ module.exports = function(grunt) {
                 options: {
                     livereload: false
                 }
+            },
+            open: {
+                server: {
+                    path: 'http://localhost:<%= connect.options.port %>'
+                }
             }
         }
     };
