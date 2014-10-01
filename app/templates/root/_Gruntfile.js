@@ -511,7 +511,7 @@ module.exports = function(grunt) {
             },
             open: {
                 server: {
-                    path: 'http://localhost:<%= connect.options.port %>'
+                    path: 'http://localhost:9000'
                 }
             }
         }
