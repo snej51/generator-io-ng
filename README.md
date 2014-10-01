@@ -4,11 +4,11 @@
 
 ## Update
 
-6/13/2014 - I discovered that I had forgotten to npm publish several of the latest fixes and improvements.  If you're using npm to get latest, please "npm install -g generator-iong" again to get the latest fixes.
+6/13/2014 - I discovered that I had forgotten to npm publish several of the latest fixes and improvements.  If you're using npm to get latest, please "npm install -g generator-io-ng" again to get the latest fixes.
 
 ## Quick Start
 
-Install generator-iong from npm, run:
+Install generator-io-ng from npm, run:
 
 ```
 $ npm install -g generator-io-ng
@@ -24,18 +24,18 @@ $ cd my-new-project
 Initiate the generator:
 
 ```
-$ yo iong
+$ yo io-ng
 ```
 
 ### Sub-Generators
 
 There's only one subgenerator at the moment
-    iong:module
+    io-ng:module
 
 To create a new module...
 
 ```
-$ yo iong:module "moduleName"
+$ yo io-ng:module "moduleName"
 ```
 
 You can specify the root folder of the module via prompt - default is "app".
@@ -46,7 +46,7 @@ re-running grunt watch will always work though.
 
 ### More Info
 
-To learn more about ngBoilerplate, [click here](https://github.com/iong/iong)
+To learn more about ngBoilerplate, [click here](https://github.com/io-ng/io-ng)
 
 
 

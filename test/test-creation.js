@@ -3,14 +3,14 @@
 var path = require('path');
 var helpers = require('yeoman-generator').test;
 
-describe('ngbp generator', function () {
+describe('io-ng generator', function () {
   beforeEach(function (done) {
     helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
       if (err) {
         return done(err);
       }
 
-      this.app = helpers.createGenerator('ngbp:app', [
+      this.app = helpers.createGenerator('io-ng:app', [
         '../../app'
       ]);
       done();
