@@ -431,6 +431,7 @@ module.exports = function(grunt) {
              */
             options: {
                 livereload: true
+                port: 9000,
             },
 
             /**
@@ -441,7 +442,8 @@ module.exports = function(grunt) {
                 files: 'Gruntfile.js',
                 tasks: [ 'jshint:gruntfile' ],
                 options: {
-                    livereload: false
+                    livereload: true
+                    port: 9000,
                 }
             },
 
@@ -506,7 +508,7 @@ module.exports = function(grunt) {
                 options: {
                     livereload: false
                 }
-            },
+            }
         }
     };
 
