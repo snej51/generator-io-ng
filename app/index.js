@@ -81,22 +81,14 @@ var IOngGenerator = yeoman.generators.Base.extend({
 
         for (var i = 0; i < files.length; i++) {
             var f = files[i];
-            var fExt = f.split('.').pop().toLowerCase();
-            var fIsSource = path.dirname(f).split('/').shift() == 'src';
-            var isExcluded = false;
-            if (fIsSource) {
-                if (fExt == 'js') {isExcluded = true;}
-            }
             var src = path.join(root, f);
-            if (!isExcluded) {
-                if (path.basename(f).indexOf('_') == 0) {
-                    var dest = path.join(destination, path.dirname(f), path.basename(f).replace(/^_/, ''));
-                    this.template(src, dest);
-                }
-                else {
-                    var dest = path.join(destination, f);
-                    this.copy(src, dest);
-                }
+            if (path.basename(f).indexOf('_') == 0) {
+                var dest = path.join(destination, path.dirname(f), path.basename(f).replace(/^_/, ''));
+                this.template(src, dest);
+            }
+            else {
+                var dest = path.join(destination, f);
+                this.copy(src, dest);
             }
         }
     },
