@@ -40,7 +40,7 @@ var IOngGenerator = yeoman.generators.Base.extend({
         // have Yeoman greet the user
         this.log(this.yeoman);
 
-        this.log(chalk.magenta('You\'re using the ngbp (AngularBoilerplate) generator, a best-practice boilerplate\n for any scale Angular project built on a highly modular, folder-by-feature structure.'));
+        this.log(chalk.magenta('You\'re using the io-ng (AngularBoilerplate) generator, a best-practice boilerplate\n for any scale Angular project built on a highly modular, folder-by-feature structure.'));
 
         var prompts = [
             {
@@ -52,20 +52,12 @@ var IOngGenerator = yeoman.generators.Base.extend({
                 name: 'author',
                 message: 'What is the author or company name?\n Used for copyright\'s in html, banners in code, and author prop in package.json\n ?',
                 default: 'Somebody Special'
-            },
-            {
-                type: 'confirm',
-                name: 'includeAngularResource',
-                message: 'Do you want to include angular-resource, helpful for calling RESTful apis?',
-                default: false
             }
         ];
 
         this.prompt(prompts, function (props) {
             this.projectName = props.projectName;
             this.author = props.author;
-            this.includeAngularResource = props.includeAngularResource;
-
             done();
         }.bind(this));
     },

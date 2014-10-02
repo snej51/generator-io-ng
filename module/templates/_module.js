@@ -6,10 +6,9 @@
  * @description
  * # <%= camelModuleName %>
  */
-(function(app) {
-
-    app.config(['$stateProvider', function ($stateProvider) {
-        $stateProvider.state('<%= name %>', {
+(function( app ) {
+    app.config( ['$stateProvider', function ( $stateProvider ) {
+        $stateProvider.state( '<%= name %>', {
             url: '/<%= lowerModuleName %>',
             views: {
                 "main": {
@@ -17,11 +16,13 @@
                     templateUrl: '<%= name %>/<%= name %>.tpl.html'
                 }
             },
-            data:{ pageTitle: '<%= capitalModuleName %>' }
+            data: {
+              pageTitle: '<%= capitalModuleName %>'
+            }
         });
     }]);
 
-    app.controller('<%= capitalModuleName %>Controller', ['$scope', function ($scope) {
+    app.controller( '<%= capitalModuleName %>Controller', ['$scope', function ( $scope ) {
 
         var init = function() {
         };

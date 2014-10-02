@@ -13,13 +13,17 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
 //    capitalControllerName: '',
 //    lowerControllerName: '',
   init: function () {
-    console.log('Creating the controller - ' + this.name);
+    console.log('Creating the controller - ' + this.controllerName);
   },
 
   askFor: function () {
     var done = this.async();
-
     var prompts = [
+      {
+        name: 'controllerName',
+        message: 'How do you spell this controller - what is the name of the controller?',
+        default: 'controller'
+      },
       {
         name: 'rootFolder',
         message: 'Where do you want to place this controller - what is the root folder?',
@@ -28,17 +32,17 @@ var ControllerGenerator = yeoman.generators.NamedBase.extend({
     ];
 
     this.prompt(prompts, function (props) {
+      this.controllerName = props.controllerName;
       this.rootFolder = props.rootFolder;
-//            this.includeRest = props.includeRest;
       done();
     }.bind(this));
   },
 
   files: function () {
     this.projectName = this.config.get('projectName');
-    this.camelControllerName = this._.camelize(this.name);
-    this.capitalControllerName = this._.capitalize(this.name);
-    this.lowerControllerName = this.name.toLowerCase();
+    this.camelControllerName = this._.camelize(this.controllerName);
+    this.capitalControllerName = this._.capitalize(this.controllerName);
+    this.lowerControllerName = this.controllerName.toLowerCase();
     this.controllerPath = path.join('src', this.rootFolder, this.camelControllerName);
     this.mkdir(this.controllerPath);
     this.template('_controller.js', path.join(this.controllerPath, this.camelControllerName + '.ctrl.js'));

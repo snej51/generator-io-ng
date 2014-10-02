@@ -45,3 +45,4 @@ packages/*
 packages/
 *.dll
 node_modules/
+test/temp/

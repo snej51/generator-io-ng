@@ -42,7 +42,7 @@ var ServiceGenerator = yeoman.generators.NamedBase.extend({
     this.servicePath = path.join('src', this.rootFolder, this.camelServiceName);
     this.mkdir(this.servicePath);
     this.template('_service.js', path.join(this.servicePath, this.camelServiceName + '.svc.js'));
-    this.template('_serviceSpec.js', path.join(this.servicePath, this.camelServiceName + '.ctrl.spec.js'));
+    this.template('_serviceSpec.js', path.join(this.servicePath, this.camelServiceName + '.svc.spec.js'));
 
     this._addServiceToAppJs(this.projectName, this.camelServiceName, this.lowerServiceName);
   },

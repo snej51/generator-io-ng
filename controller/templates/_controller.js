@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name <%= scriptAppName %>.controller:<%= classedName %>Ctrl
+ * @name <%= projectName %>.<%= camelControllerName %>Ctrl
  * @description
- * # <%= classedName %>Ctrl
- * Controller of the <%= scriptAppName %>
+ * # <%= camelControllerName %>Ctrl
+ * Controller of the <%= projectName %>
  */
 angular.module('<%= projectName %>')
-  .controller('<%= capitalModuleName %>Ctrl', function ($scope) {
+  .controller('<%= camelControllerName %>Ctrl', function ($scope) {
     $scope.test = [
       'Test123',
       'Test1234',

@@ -33,9 +33,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "yeoman-generator": "~0.16.0",
+    "yeoman-generator": "~0.17.0",
+    "fs-extra": "~0.10.0",
+    "async": "~0.9.0",
     "chalk": "~0.4.0",
-    "touch": "0.0.3"
+    "touch": "0.0.3",
+    "temp": "~0.8.0"
   },
   "devDependencies": {
     "mocha": "*"

@@ -26,7 +26,6 @@ var ModuleGenerator = yeoman.generators.NamedBase.extend({
 
         this.prompt(prompts, function (props) {
             this.rootFolder = props.rootFolder;
-//            this.includeRest = props.includeRest;
             done();
         }.bind(this));
     },
@@ -44,10 +43,6 @@ var ModuleGenerator = yeoman.generators.NamedBase.extend({
         this.template('_module.less', path.join(modulePath, this.camelModuleName + '.less'));
 
         this._addModuleToAppJs(this.projectName, this.camelModuleName, this.lowerModuleName);
-
-//        if (this.includeRestfulService) {
-//            // Add RESTful service stuff here
-//        }
     },
 
     touchIndexHtml: function() {
