@@ -57,13 +57,11 @@ var FactoryGenerator = yeoman.generators.NamedBase.extend({
     touch(indexHtmlFilePath, {mtime: true});
   },
 
-  _addFactoryToAppJs: function app(projectName, camelFactoryName, lowerFactoryName) {
-    var hook   = '])));',
-      path   = 'src/app/app.js',
-      insert = "    '" + projectName + "." + camelFactoryName + "',\n";
-
-    var file   = this.readFileAsString(path);
-
+  _addFactoryToAppJs: function app(projectName, camelName) {
+    var hook   = '\n])));',
+        path   = 'src/app/app.js',
+        insert = ",\n    '" + projectName + "." + camelName + "'";
+    var file = this.readFileAsString(path);
     if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert + hook));
     }

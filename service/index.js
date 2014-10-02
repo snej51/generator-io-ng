@@ -53,13 +53,11 @@ var ServiceGenerator = yeoman.generators.NamedBase.extend({
     touch(indexHtmlFilePath, {mtime: true});
   },
 
-  _addServiceToAppJs: function app(projectName, camelServiceName, lowerServiceName) {
-    var hook   = '])));',
-      path   = 'src/app/app.js',
-      insert = "    '" + projectName + "." + camelServiceName + "',\n";
-
+  _addServiceToAppJs: function app(projectName, camelName) {
+    var hook   = '\n])));',
+        path   = 'src/app/app.js',
+        insert = ",\n    '" + projectName + "." + camelName + "'";
     var file   = this.readFileAsString(path);
-
     if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert + hook));
     }

@@ -10,8 +10,8 @@ var test    = require('./helper');
 
 describe('Angular-RequireJS generator appPath option', function () {
   var appPath = 'app';
-  var appName = 'Generator io-ng Testing';
-  var abbr = 'foo';
+  var appName = 'foo';
+  var abbr = 'bar';
   var expected = {
     app: [
       'src/app/about/about.js',

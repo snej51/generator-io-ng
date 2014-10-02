@@ -76,13 +76,11 @@ var DirectiveGenerator = yeoman.generators.NamedBase.extend({
     touch(indexHtmlFilePath, {mtime: true});
   },
 
-  _addDirectiveToAppJs: function app(projectName, camelDirectiveName, lowerDirectiveName) {
-    var hook   = '])));',
-      path   = 'src/app/app.js',
-      insert = "    '" + projectName + "." + camelDirectiveName + "',\n";
-
-    var file   = this.readFileAsString(path);
-
+  _addDirectiveToAppJs: function app(projectName, camelName) {
+    var hook   = '\n])));',
+        path   = 'src/app/app.js',
+        insert = ",\n    '" + projectName + "." + camelName + "'";
+    var file = this.readFileAsString(path);
     if (file.indexOf(insert) === -1) {
       this.write(path, file.replace(hook, insert + hook));
     }
